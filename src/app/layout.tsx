@@ -1,5 +1,4 @@
-import { PrismicPreview } from "@prismicio/next";
-import { repositoryName } from "@/prismicio";
+
 import localFont from 'next/font/local'
 
 import "./app.css"
@@ -31,7 +30,6 @@ export default function RootLayout({
         </main>
         <Footer/>
       </body>
-      <PrismicPreview repositoryName={repositoryName} />
     </html>
   );
 }

@@ -6,14 +6,8 @@ import { SliceComponentProps } from "@prismicio/react";
 import Scene from "./Scene";
 import {View } from "@react-three/drei";
 
-/**
- * Props for `SkyDive`.
- */
 export type SkyDiveProps = SliceComponentProps<Content.SkyDiveSlice>;
 
-/**
- * Component for "SkyDive" Slices.
- */
 const SkyDive = ({ slice }: SkyDiveProps): JSX.Element => {
   return (
     <Bounded

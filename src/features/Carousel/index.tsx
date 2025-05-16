@@ -2,8 +2,6 @@
 
 import FloatingCan from "@/components/FloatingCan";
 import { SodaCanProps } from "@/components/SodaCan";
-import { Content } from "@prismicio/client";
-import { PrismicText, SliceComponentProps } from "@prismicio/react";
 import { Center, Environment, View } from "@react-three/drei";
 import { useRef, useState } from "react";
 import { ArrowIcon } from "./ArrowIcon";
@@ -19,32 +17,23 @@ const FLAVORS: {
   flavor: SodaCanProps["flavor"];
   color: string;
   name: string;
+  description: string; // added description here
 }[] = [
-  { flavor: "blackCherry", color: "#710523", name: "Black Cherry" },
-  { flavor: "grape", color: "#572981", name: "Grape Goodness" },
-  { flavor: "lemonLime", color: "#164405", name: "Lemon Lime" },
-  {
-    flavor: "strawberryLemonade",
-    color: "#690B3D",
-    name: "Strawberry Lemonade",
-  },
-  { flavor: "watermelon", color: "#4B7002", name: "Watermelon Crush" },
+  { flavor: "blackCherry", color: "#710523", name: "Black Cherry", description: "Bold and sweet with a deep cherry punch." },
+  { flavor: "grape", color: "#572981", name: "Grape Goodness", description: "Juicy grape flavor that refreshes your day." },
+  { flavor: "lemonLime", color: "#164405", name: "Lemon Lime", description: "Crisp citrus notes to brighten your mood." },
+  { flavor: "strawberryLemonade", color: "#690B3D", name: "Strawberry Lemonade", description: "Sweet strawberries meet tart lemonade bliss." },
+  { flavor: "watermelon", color: "#4B7002", name: "Watermelon Crush", description: "Light, juicy watermelon for ultimate refreshment." },
 ];
 
 /**
- * Props for `Carousel`.
+ * Component for "Carousel" with hardcoded content instead of Prismic.
  */
-export type CarouselProps = SliceComponentProps<Content.CarouselSlice>;
-
-/**
- * Component for "Carousel" Slices.
- */
-const Carousel = ({ slice }: CarouselProps): JSX.Element => {
+const Carousel = (): JSX.Element => {
   const [currentFlavorIndex, setCurrentFlavorIndex] = useState(0);
 
   const sodaCanRef = useRef<Group>(null);
 
-  // cycle through an array repeatedly without needing conditionals to check the bounds.
   function changeFlavor(index: number) {
     if (!sodaCanRef.current) return;
     const nextIndex = (index + FLAVORS.length) % FLAVORS.length;
@@ -56,7 +45,7 @@ const Carousel = ({ slice }: CarouselProps): JSX.Element => {
       {
         y:
           index > currentFlavorIndex
-            ? `-=${Math.PI * 2 * SPINS_ON_CHANGE}` // -ve 8 rotations
+            ? `-=${Math.PI * 2 * SPINS_ON_CHANGE}`
             : `+=${Math.PI * 2 * SPINS_ON_CHANGE}`,
         ease: "power2.inOut",
         duration: 1,
@@ -92,13 +81,10 @@ const Carousel = ({ slice }: CarouselProps): JSX.Element => {
         },
         0.7,
       );
-
   }
 
   return (
     <section
-      data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}
       className="carousel grid-rows-[auto, 4fr, auto] relative grid h-screen justify-center overflow-hidden bg-white py-12 text-white"
     >
       <div className="background pointer-events-none absolute inset-0 bg-[#710523] opacity-50" />
@@ -106,20 +92,18 @@ const Carousel = ({ slice }: CarouselProps): JSX.Element => {
       <WavyCircles className="absolute left-1/2 top-1/2 h-[120vmin] -translate-x-1/2 -translate-y-1/2 text-[#710523]" />
 
       <h2 className="relative text-center text-5xl font-bold">
-        <PrismicText field={slice.primary.heading} />
+        Discover Your Favorite Flavor
       </h2>
 
       <div className="grid grid-cols-[auto,auto,auto] items-center">
         {/* left */}
-
         <ArrowButton
           onClick={() => changeFlavor(currentFlavorIndex - 1)}
           direction="left"
           label="Previous Flavor"
-        ></ArrowButton>
+        />
 
         {/* can */}
-
         <View className="aspect-square h-[70vmin] min-h-40">
           <Center position={[0, 0, 1.5]}>
             <FloatingCan
@@ -134,17 +118,15 @@ const Carousel = ({ slice }: CarouselProps): JSX.Element => {
             environmentIntensity={0.6}
             environmentRotation={[0, 3, 0]}
           />
-
           <directionalLight intensity={6} position={[0, 1, 1]} />
         </View>
 
         {/* right */}
-
         <ArrowButton
           onClick={() => changeFlavor(currentFlavorIndex + 1)}
           direction="right"
           label="Next Flavor"
-        ></ArrowButton>
+        />
       </div>
 
       <div className="text-area relative mx-auto text-center">
@@ -153,7 +135,7 @@ const Carousel = ({ slice }: CarouselProps): JSX.Element => {
         </div>
 
         <div className="mt-2 text-2xl font-normal opacity-90">
-          <PrismicText field={slice.primary.price_copy} />
+          {FLAVORS[currentFlavorIndex].description}
         </div>
       </div>
     </section>

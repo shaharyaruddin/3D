@@ -1,7 +1,7 @@
 "use client";
 
 import { asText, Content } from "@prismicio/client";
-import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
+import { PrismicNextImage } from "@prismicio/next";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 
 import { Bounded } from "@/components/Bounded";

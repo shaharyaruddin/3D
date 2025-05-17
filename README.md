@@ -1,135 +1,73 @@
-# Fizzi - Interactive 3D Landing Page
+# Frissko – Interactive 3D Refreshment Landing Page
 
-## Project Overview
+## 🌟 Overview
 
-Fizzi is an innovative web application showcasing an interactive landing page with advanced 3D animations, built using cutting-edge web technologies.
+**Frissko** is a visually stunning 3D landing page designed for a modern refreshment brand. Built with cutting-edge tools like Next.js, React Three Fiber, and GSAP, this project delivers a smooth, immersive experience without relying on any CMS—**all content is hardcoded** for simplicity and speed.
 
+## 🌐 Live Site
 
+[Visit Frissko](https://frissko.vercel.app)
 
-![front](https://github.com/bsilvers64/Fizzi/blob/2c6016a61ad5859a55afa07b8492cbde9a06b7fd/resources/front.gif)
+## 🛠 Tech Stack
 
-## Links
-
-### Visit the Website -
-
-[Fizzi-Soda](https://fizzi-utvl.vercel.app)
-
-### notes and blog -
-[Notion Article](https://marmalade-practice-424.notion.site/Fizzi-landing-page-13d3ca7f759c80c09e90ce2dee9b92f4)
-
-
-## Tech Stack
-
-- **Frontend Framework**: Next.js
+- **Framework**: Next.js
 - **3D Graphics**: React Three Fiber, Three.js
-- **Animation**: GSAP (GreenSock Animation Platform)
+- **Animations**: GSAP (GreenSock Animation Platform)
 - **Styling**: Tailwind CSS
-- **CMS**: Prismic
+- **State Management**: Zustand
 
-## Key Features
+## ✨ Features
 
-### 1. Dynamic Content Management
-- Utilizes Prismic CMS with Slice Machine
-- Modular, reusable content blocks
-- Automatic TypeScript type generation for content slices
+### ⚡ Hardcoded Content
+- No CMS or external data source
+- All text and images managed directly in code
+- Faster rendering and lower latency
 
-### 2. 3D Visualization
-- Interactive 3D soda can models
-- Custom 3D scenes with floating and animated elements
-- Responsive canvas rendering across devices
+### 🧃 3D Refreshment Scene
+- Interactive 3D soda/energy drink cans
+- Floating animations and responsive scaling
+- Smooth mobile and desktop rendering
 
-### 3. Performance Optimizations
-- Next.js font optimization
-- Tailwind CSS purging unused styles
-- Efficient 3D model loading with preloading techniques
+### 🎥 Smooth Animations
+- GSAP-powered entrance and scroll animations
+- Text reveals, parallax effects, and can rotations
+- Timeline-based control for fine-tuned transitions
 
-## Technical Deep Dive
+### 📱 Fully Responsive
+- Tailwind-powered responsive layout
+- Mobile-first design considerations
+- Optimized for various screen sizes
 
-### Content Architecture
-- Prismic Slice Machine enables dynamic content creation
-- Each slice represents a reusable, flexible content block
-- Automatic TypeScript type generation for robust type-checking
+### 🚀 Performance Optimization
+- Lazy-loaded 3D models
+- WebGL context managed efficiently
+- Minimal bundle size using code splitting
 
-### Animation Techniques
-- GSAP Timeline for sequenced animations
-- Scroll-triggered animations
-- Text and character-level animations
-- 3D object transformations
+## 🔧 Key Components
 
-### 3D Rendering
-- React Three Fiber for declarative 3D graphics
-- Custom GLTF model rendering
-- Advanced texture and material management
-- Performance monitoring with r3f-perf
+### 3D & UI
+- `SodaCan.tsx` – Main 3D soda can component
+- `FloatingCan.tsx` – Floating + animated version
+- `HeroScene.tsx` – Entry animation + 3D scene wrapper
 
-### State Management
-- Zustand for lightweight state control
-- Tracking asset loading and scene readiness
+### UI Layout
+- `HeroSection.tsx` – Catchy headline + animated intro
+- `FlavorsCarousel.tsx` – Choose from different drink flavors
+- `CallToAction.tsx` – Buttons and prompts
 
-## Development Workflow
+### Utility
+- `useStore.ts` – Zustand for state and loading
+- `useAnimations.ts` – Custom GSAP hooks
 
-1. Local development with Prismic Slice Machine
-2. Content creation in Prismic dashboard
-3. Automatic type generation
-4. Responsive design implementation
-5. Animation and interaction layer
+## 🧪 Getting Started
 
-## Performance Considerations
-
-- Single WebGL context using React Drei's View component
-- Optimized 3D model loading
-- Suspense for asset management
-- Tailwind CSS performance optimization
-
-## Key Components
-### 3D Scene Components
-
-- SodaCan.tsx: Custom 3D soda can model renderer
-- FloatingCan.tsx: Animated floating can component
-- HeroScene.tsx: Main landing page 3D scene
-
-### Slice Components
-
-- Hero: Initial landing page slice
-- SkyDive: Animated scrolling slice
-- Carousel: Interactive flavor selection slice
-
-## Animations and Interactions
-### GSAP Animations
-
-- Intro timeline with staggered element appearances
-- Scroll-triggered animations
-- 3D object transformations
-- Character and text animations
-
-### Scroll Interactions
-
-- Smooth scrolling effects
-- Parallax-like 3D object movements
-- Dynamic content reveal
-
-### Optimization Techniques
-
-- Preloading 3D models with useGLTF.preload()
-- Efficient WebGL context management
-- Lazy loading with React Suspense
-- Performance monitoring with r3f-perf
-
-## Acknowledgments
-
-- [Alex Trost](https://github.com/a-trost)
-- [Prismic](https://github.com/prismicio)
-
-## Getting Started
-
-### Prerequisites
-- Node.js
+### Requirements
+- Node.js 16+
 - npm or yarn
-- Prismic account
 
 ### Installation
 ```bash
-git clone https://github.com/bsilvers64/Fizzi.git
-cd fizzi
+git clone https://github.com/your-username/frissko.git
+cd frissko
 npm install
 npm run dev

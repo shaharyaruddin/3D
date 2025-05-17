@@ -150,7 +150,7 @@ export default function Scene({}: Props) {
       />
       <FloatingCan ref={can5ref} flavor="watermelon" floatSpeed={FLOAT_SPEED} />
 
-      <Environment files="/hdr/lobby.hdr" environmentIntensity={1.5} />
+      <Environment files="/hdr/lobby.hdr" environmentIntensity={1.5} /> 
     </group>
   );
 }

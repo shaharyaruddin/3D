@@ -63,7 +63,7 @@ const Hero = (): JSX.Element => {
         .fromTo(
           "body",
           {
-            backgroundColor: "white", // citrus yellow
+            backgroundColor: "white", 
           },
           {
             backgroundColor: "#00D2FF", // aqua blue

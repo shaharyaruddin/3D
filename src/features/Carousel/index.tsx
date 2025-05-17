@@ -17,21 +17,42 @@ const FLAVORS: {
   flavor: SodaCanProps["flavor"];
   color: string;
   name: string;
-  description: string; // added description here
+  description: string;
 }[] = [
-  { flavor: "blackCherry", color: "#710523", name: "Black Cherry", description: "Bold and sweet with a deep cherry punch." },
-  { flavor: "grape", color: "#572981", name: "Grape Goodness", description: "Juicy grape flavor that refreshes your day." },
-  { flavor: "lemonLime", color: "#164405", name: "Lemon Lime", description: "Crisp citrus notes to brighten your mood." },
-  { flavor: "strawberryLemonade", color: "#690B3D", name: "Strawberry Lemonade", description: "Sweet strawberries meet tart lemonade bliss." },
-  { flavor: "watermelon", color: "#4B7002", name: "Watermelon Crush", description: "Light, juicy watermelon for ultimate refreshment." },
+  {
+    flavor: "blackCherry",
+    color: "#FF5E5B",
+    name: "Black Cherry",
+    description: "Bold and sweet with a deep cherry punch.",
+  },
+  {
+    flavor: "grape",
+    color: "#00C2CB",
+    name: "Grape Goodness",
+    description: "Juicy grape flavor that refreshes your day.",
+  },
+  {
+    flavor: "lemonLime",
+    color: "#FCE22A",
+    name: "Lemon Lime",
+    description: "Crisp citrus notes to brighten your mood.",
+  },
+  {
+    flavor: "strawberryLemonade",
+    color: "#FF5E5B",
+    name: "Strawberry Lemonade",
+    description: "Sweet strawberries meet tart lemonade bliss.",
+  },
+  {
+    flavor: "watermelon",
+    color: "#00C2CB",
+    name: "Watermelon Crush",
+    description: "Light, juicy watermelon for ultimate refreshment.",
+  },
 ];
 
-/**
- * Component for "Carousel" with hardcoded content instead of Prismic.
- */
 const Carousel = (): JSX.Element => {
   const [currentFlavorIndex, setCurrentFlavorIndex] = useState(0);
-
   const sodaCanRef = useRef<Group>(null);
 
   function changeFlavor(index: number) {
@@ -50,7 +71,7 @@ const Carousel = (): JSX.Element => {
         ease: "power2.inOut",
         duration: 1,
       },
-      0,
+      0
     )
       .to(
         ".background, .wavy-circles-outer, .-wavy-circles-inner",
@@ -60,7 +81,7 @@ const Carousel = (): JSX.Element => {
           ease: "power2.inOut",
           duration: 1,
         },
-        0,
+        0
       )
       .to(
         ".text-wrapper",
@@ -69,7 +90,7 @@ const Carousel = (): JSX.Element => {
           y: -10,
           opacity: 0,
         },
-        0,
+        0
       )
       .to({}, { onStart: () => setCurrentFlavorIndex(nextIndex) }, 0.5)
       .to(
@@ -79,31 +100,27 @@ const Carousel = (): JSX.Element => {
           y: 0,
           opacity: 1,
         },
-        0.7,
+        0.7
       );
   }
 
   return (
-    <section
-      className="carousel grid-rows-[auto, 4fr, auto] relative grid h-screen justify-center overflow-hidden bg-white py-12 text-white"
-    >
-      <div className="background pointer-events-none absolute inset-0 bg-[#710523] opacity-50" />
+    <section className="carousel grid-rows-[auto, 4fr, auto] relative grid h-screen justify-center overflow-hidden bg-white py-12 text-white">
+      <div className="background pointer-events-none absolute inset-0 bg-[#00C2CB] opacity-60" />
 
-      <WavyCircles className="absolute left-1/2 top-1/2 h-[120vmin] -translate-x-1/2 -translate-y-1/2 text-[#710523]" />
+      <WavyCircles className="absolute left-1/2 top-1/2 h-[120vmin] -translate-x-1/2 -translate-y-1/2 text-[#00C2CB]" />
 
-      <h2 className="relative text-center text-5xl font-bold">
+      <h2 className="relative text-center text-5xl font-bold text-[#0F172A]">
         Discover Your Favorite Flavor
       </h2>
 
       <div className="grid grid-cols-[auto,auto,auto] items-center">
-        {/* left */}
         <ArrowButton
           onClick={() => changeFlavor(currentFlavorIndex - 1)}
           direction="left"
           label="Previous Flavor"
         />
 
-        {/* can */}
         <View className="aspect-square h-[70vmin] min-h-40">
           <Center position={[0, 0, 1.5]}>
             <FloatingCan
@@ -121,7 +138,6 @@ const Carousel = (): JSX.Element => {
           <directionalLight intensity={6} position={[0, 1, 1]} />
         </View>
 
-        {/* right */}
         <ArrowButton
           onClick={() => changeFlavor(currentFlavorIndex + 1)}
           direction="right"
@@ -130,11 +146,11 @@ const Carousel = (): JSX.Element => {
       </div>
 
       <div className="text-area relative mx-auto text-center">
-        <div className="text-wrapper text-4xl font-medium">
+        <div className="text-wrapper text-4xl font-medium text-[#F8FAFC]">
           <p>{FLAVORS[currentFlavorIndex].name}</p>
         </div>
 
-        <div className="mt-2 text-2xl font-normal opacity-90">
+        <div className="mt-2 text-2xl font-normal opacity-90 text-[#F8FAFC]">
           {FLAVORS[currentFlavorIndex].description}
         </div>
       </div>

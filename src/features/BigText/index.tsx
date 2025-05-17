@@ -5,17 +5,26 @@ const BigText = (): JSX.Element => {
     <section
       data-slice-type="big_text"
       data-slice-variation="default"
-      className="min-h-screen w-screen overflow-hidden bg-[#FE6334] text-[#FEE832]"
+      className="relative z-10 flex min-h-screen w-screen items-center justify-center overflow-hidden bg-gradient-to-br from-sky-400 via-sky-600 to-sky-800 text-white"
     >
-      <h2 className="grid w-full gap-[3vw] py-10 text-center font-black uppercase leading-[.7]">
-        <div className="text-[34vw]">Fizz</div>
-        <div className="grid gap-[3vw] text-[34vw] md:flex md:text-[11vw]">
-          <span className="inline-block">for</span>
-          <span className="inline-block max-md:text-[27vw]">every</span>
-          <span className="inline-block max-md:text-[40vw]">mood</span>
-        </div>
-        <div className="text-[32vw]">Burst</div>
-      </h2>
+      {/* Sky-glass-style card */}
+      <div className="backdrop-blur-xl bg-white/10 border border-blue-200/20 rounded-3xl px-6 py-10 md:px-12 md:py-20 shadow-[0_8px_32px_0_rgba(135,206,250,0.37)] max-w-6xl mx-auto text-center">
+        <h2 className="grid gap-y-[3vw] font-black uppercase leading-[0.75] tracking-tight text-white text-balance">
+          <div className="text-[28vw] md:text-[10vw] drop-shadow-[2px_4px_8px_rgba(0,0,0,0.3)]">
+            Fizz
+          </div>
+
+          <div className="grid gap-[3vw] text-[30vw] md:flex md:justify-center md:gap-8 md:text-[8vw]">
+            <span className="inline-block drop-shadow-md">for</span>
+            <span className="inline-block drop-shadow-md">every</span>
+            <span className="inline-block drop-shadow-md">mood</span>
+          </div>
+
+          <div className="text-[26vw] md:text-[9vw] drop-shadow-[2px_4px_6px_rgba(0,0,0,0.3)]">
+            Burst
+          </div>
+        </h2>
+      </div>
     </section>
   );
 };

@@ -174,7 +174,7 @@ export default function Scene({ sentence, flavor }: SkyDiveProps) {
 
       {/* text */}
       <group ref={wordsRef}>
-        {sentence && <ThreeText sentence={sentence} color="#F97315" />}
+        {sentence && <ThreeText sentence={sentence} color="#001F54" />}
       </group>
 
       {/* lights */}

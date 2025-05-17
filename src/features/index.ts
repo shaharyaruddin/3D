@@ -1,6 +1,5 @@
 import dynamic from "next/dynamic";
 
-// Manually mapping Prismic slice types to components
 export const components = {
   alternating_text: dynamic(() => import("./AlternatingText"), { ssr: false }),
   big_text: dynamic(() => import("./BigText"), { ssr: false }),

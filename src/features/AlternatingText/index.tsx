@@ -20,15 +20,14 @@ const hardcodedSections = [
   },
 ];
 
-
 const AlternatingText = (): JSX.Element => {
   return (
     <Bounded
       data-slice-type="alternating_text"
       data-slice-variation="default"
-      className="alternating-text-container relative bg-yellow-300 text-sky-950"
+      className="alternating-text-container relative bg-gradient-to-br from-[#FEE140] via-[#FA709A] to-[#FEE140] text-white"
     >
-      <div className="relative z-[100] grid">
+      <div className="relative z-[10] grid">
         {/* 3D Scene */}
         <View className="alternating-text-view absolute left-0 top-0 h-screen w-full">
           <Scene />
@@ -43,13 +42,15 @@ const AlternatingText = (): JSX.Element => {
             <div
               className={clsx(
                 index % 2 === 0 ? "col-start-1" : "md:col-start-2",
-                "rounded-lg p-4 backdrop-blur-lg max-md:bg-white/10",
+                "rounded-3xl p-8 backdrop-blur-xl bg-white/10 border border-white/20 shadow-2xl transition duration-300 ease-in-out hover:scale-[1.02]"
               )}
             >
-              <h2 className="text-balance text-6xl font-bold">
+              <h2 className="text-balance text-5xl md:text-6xl font-extrabold tracking-tight text-white">
                 {item.heading}
               </h2>
-              <p className="mt-4 text-xl">{item.body}</p>
+              <p className="mt-6 text-lg md:text-xl text-slate-100">
+                {item.body}
+              </p>
             </div>
           </div>
         ))}

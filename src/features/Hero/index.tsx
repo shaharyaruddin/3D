@@ -97,7 +97,7 @@ const Hero = (): JSX.Element => {
         </View>
       )}
 
-      <div className="grid">
+      <div className="md:px-0 px-3 grid">
         <div className="grid h-screen place-content-center">
           <div className="grid auto-rows-min place-items-center text-center">
             <h1 className="hero-header text-7xl font-black uppercase leading-[.8] text-sky-800 md:text-[9rem] lg:text-[13rem]">
@@ -108,11 +108,11 @@ const Hero = (): JSX.Element => {
               />
             </h1>
 
-            <div className="hero-subheading mt-12 text-5xl font-semibold text-[#003049] lg:text-6xl">
+            <div className="hero-subheading mt-12 text-3xl md:text-5xl font-semibold text-[#003049] lg:text-6xl">
               Refresh your senses with the ultimate fizz!
             </div>
 
-            <div className="hero-body text-2xl font-normal text-[#003049]">
+            <div className="flex justify-center  max-w-xs md:max-w-full hero-body text-2xl font-normal text-[#003049]">
               Experience a burst of flavor in every sip. Made for fun, crafted
               for flavor.
             </div>
@@ -132,7 +132,7 @@ const Hero = (): JSX.Element => {
               alt="Soda Cans"
               className="w-full md:hidden"
             />
-            <h2 className="text-side-heading text-balance text-6xl font-black uppercase text-[#003049] lg:text-8xl">
+            <h2 className="text-side-heading text-balance text-4xl md:text-6xl font-black uppercase text-[#003049] lg:text-8xl">
               <TextSplitter text="Pure Refreshment" />
             </h2>
             <div className="text-side-body mt-4 max-w-xl text-balance text-xl font-normal text-[#003049]">

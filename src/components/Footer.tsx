@@ -1,5 +1,4 @@
 import React from "react";
-import CircleText from "./CircleText";
 import Image from "next/image";
 
 
@@ -17,10 +16,10 @@ width={200}
 height={200}
       />
 
-        <div className="absolute z-50 right-24 top-0 size-28 origin-center -translate-y-14 md:size-48 md:-translate-y-28">
+        {/* <div className="absolute z-50 right-24 top-0 size-28 origin-center -translate-y-14 md:size-48 md:-translate-y-28">
 
           <CircleText/>
-        </div>
+        </div> */}
       </div>
     </footer>
   );

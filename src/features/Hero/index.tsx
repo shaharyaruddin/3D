@@ -127,11 +127,7 @@ const Hero = (): JSX.Element => {
 
         <div className="text-side relative z-[80] grid h-screen items-center gap-4 md:grid-cols-2">
           <div>
-            <img
-              src="/soda-cans-refreshment.jpg"
-              alt="Soda Cans"
-              className="w-full md:hidden"
-            />
+          
             <h2 className="text-side-heading text-balance text-4xl md:text-6xl font-black uppercase text-[#003049] lg:text-8xl">
               <TextSplitter text="Pure Refreshment" />
             </h2>
